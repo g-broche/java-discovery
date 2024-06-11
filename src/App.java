@@ -1,6 +1,7 @@
 import courses.ArrayDemo;
 import courses.Instruction;
 import courses.ListDemo;
+import courses.MapDemo;
 import courses.SetDemo;
 
 public class App {
@@ -9,6 +10,7 @@ public class App {
         App.runCourse("testing arrays", App::testArrays);
         App.runCourse("testing lists", App::testLists);
         App.runCourse("testing sets", App::testSets);
+        App.runCourse("testing maps", App::testMaps);
     }
 
     private static void testInstructions(){
@@ -36,6 +38,7 @@ public class App {
         listDemo.removeAnimal(2);
         listDemo.printAnimalList();
     }
+
     private static void testSets(){
         SetDemo setDemo = new SetDemo();
         setDemo.addFlowersToSet("rose", "dandelion", "iris");
@@ -46,6 +49,30 @@ public class App {
         setDemo.printFlowerSet();
     }
 
+    private static void testMaps(){
+        MapDemo mapDemo = new MapDemo();
+        final String keyJohnDoe = "John Doe";
+        final String keyJaneDoe = "Jane Doe";
+        final String keyPierreMichel = "Pierre Michel";
+
+        String nonexistentKey = "Derp";
+
+        mapDemo.addUsers(keyJohnDoe, 30);
+        mapDemo.addUsers(keyJaneDoe, 27);
+        mapDemo.addUsers(keyPierreMichel, 38);
+        mapDemo.printUserList();
+        String ageJaneDoe = StringifyIntegerForPrint(mapDemo.getUserInfo(keyJaneDoe));
+        String nullResult = StringifyIntegerForPrint(mapDemo.getUserInfo(nonexistentKey));
+        
+        String toPrint = keyJaneDoe+": "+ageJaneDoe+"; "+nonexistentKey+": "+nullResult;
+        System.out.print(toPrint);
+    }
+
+    /**
+     * Wrapper method to make terminal print output clearer
+     * @param title title of the topic
+     * @param courseToExecute method to execute for the related topic
+     */
     private static void runCourse(String title, Runnable courseToExecute){
         System.out.println();
         System.out.println("------------------------------------------");
@@ -55,5 +82,14 @@ public class App {
             System.out.println();
         }
         courseToExecute.run();
+    }
+
+    /**
+     * Used to return a string from an Integer class
+     * @param value Integer to convert to string
+     * @return value converter to string or "null" if value provided was null
+     */
+    private static String StringifyIntegerForPrint(Integer value){
+        return value != null ? Integer.toString(value) : "null";
     }
 }
