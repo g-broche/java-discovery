@@ -1,7 +1,7 @@
 package courses;
-public class Array {
+public class ArrayDemo {
     int arrayLength = 10;
-    int[] numberArray = new int[arrayLength]; //possibility to define a max length for an array
+    int[] numberArray = new int[arrayLength]; //an array has a max length
     
     public void fillArray(){
         int count = 0;
