@@ -1,4 +1,7 @@
 package courses;
+/**
+ * Arrays are used for collections with a capped length. While lacking flexibility they offer better optimization.
+ */
 public class ArrayDemo {
     int arrayLength = 10;
     int[] numberArray = new int[arrayLength]; //an array has a max length

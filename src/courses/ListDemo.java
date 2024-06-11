@@ -3,6 +3,9 @@ package courses;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Lists are used for collection that require a flexibility
+ */
 public class ListDemo {
     List<String> animalList = new ArrayList<String>();
 
@@ -14,7 +17,7 @@ public class ListDemo {
 
     public void printAnimalList(){
         String toPrint = "";
-        for (String animal : animalList) {
+        for (String animal : this.animalList) {
             toPrint += toPrint == "" ? animal : ", "+animal;
         }
         System.out.println(toPrint);
