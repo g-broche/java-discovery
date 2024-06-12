@@ -1,4 +1,4 @@
-package courses;
+package Courses;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,13 +11,21 @@ public class MapDemo {
     }
 
     public Integer getUserInfo(String userName){
-        if(!this.userAgesMap.containsKey(userName)){
-            System.out.println("There are no user registered for the inputted key");
+        if(!this.isUserInMap(userName)){
             return null;
         }
         int age = this.userAgesMap.get(userName);
         System.out.println("User "+userName+" is of age "+age);
         return age;
+    }
+
+    public void removeUser(String userName){
+        if(!this.isUserInMap(userName)){
+            return;
+        }
+        if(this.userAgesMap.remove(userName) != null){
+            System.out.println("User named "+userName+" has been removed.");
+        };
     }
 
     public void printUserList(){
@@ -28,5 +36,11 @@ public class MapDemo {
             toPrint += toPrint == "" ? user+": "+Integer.toString(age) : "; "+user+": "+Integer.toString(age);
         }
         System.out.println(toPrint);
+    }
+
+    private boolean isUserInMap(String userName){
+        boolean isPresent = this.userAgesMap.containsKey(userName);
+        if(!isPresent){System.out.println("There are no user registered for the inputted key");}
+        return isPresent;
     }
 }

@@ -1,4 +1,4 @@
-package courses;
+package Courses;
 
 public class Instruction {
     public static void calculateResults(){

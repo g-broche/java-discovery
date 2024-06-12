@@ -1,4 +1,4 @@
-package courses;
+package Courses;
 /**
  * Arrays are used for collections with a capped length. While lacking flexibility they offer better optimization.
  */
