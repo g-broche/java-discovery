@@ -1,24 +1,16 @@
 package Chapters;
 
 import Courses.ArrayDemo;
-import Courses.Instruction;
 import Courses.ListDemo;
 import Courses.MapDemo;
 import Courses.SetDemo;
 
 public class ContainerCourse extends BaseCourseWrapper{
-        public static void runContainerRelatedCourse(){
-        ContainerCourse.runCourse("testing instructions", ContainerCourse::testInstructions);
+        public static void runCourse(){
         ContainerCourse.runCourse("testing arrays", ContainerCourse::testArrays);
         ContainerCourse.runCourse("testing lists", ContainerCourse::testLists);
         ContainerCourse.runCourse("testing sets", ContainerCourse::testSets);
         ContainerCourse.runCourse("testing maps", ContainerCourse::testMaps);
-    }
-
-    private static void testInstructions(){
-        System.out.println("testing instructions");
-        Instruction.calculateResults();
-        System.out.println();
     }
 
     private static void testArrays(){

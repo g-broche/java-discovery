@@ -1,7 +1,9 @@
 import Chapters.ContainerCourse;
+import Chapters.InstructionCourse;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        ContainerCourse.runContainerRelatedCourse();
+        InstructionCourse.runCourse();
+        ContainerCourse.runCourse();
     }
 }
