@@ -3,6 +3,9 @@ package Courses;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+ * Collections containing entries in the format key => value
+ */
 public class MapDemo {
     Map<String, Integer> userAgesMap = new HashMap<String, Integer>();
 
