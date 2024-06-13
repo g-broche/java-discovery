@@ -7,10 +7,10 @@ import Courses.SetDemo;
 
 public class ContainerCourse extends BaseCourseWrapper{
         public static void runCourse(){
-        ContainerCourse.runCourse("testing arrays", ContainerCourse::testArrays);
-        ContainerCourse.runCourse("testing lists", ContainerCourse::testLists);
-        ContainerCourse.runCourse("testing sets", ContainerCourse::testSets);
-        ContainerCourse.runCourse("testing maps", ContainerCourse::testMaps);
+        ContainerCourse.runCourseContent("testing arrays", ContainerCourse::testArrays);
+        ContainerCourse.runCourseContent("testing lists", ContainerCourse::testLists);
+        ContainerCourse.runCourseContent("testing sets", ContainerCourse::testSets);
+        ContainerCourse.runCourseContent("testing maps", ContainerCourse::testMaps);
     }
 
     private static void testArrays(){

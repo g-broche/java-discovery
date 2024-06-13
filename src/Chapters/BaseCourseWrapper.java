@@ -5,7 +5,7 @@ public class BaseCourseWrapper {
      * @param title title of the topic
      * @param courseToExecute method to execute for the related topic
      */
-    protected static void runCourse(String title, Runnable courseToExecute){
+    protected static void runCourseContent(String title, Runnable courseToExecute){
         System.out.println();
         System.out.println("------------------------------------------");
         System.out.println();
