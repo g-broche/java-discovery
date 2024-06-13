@@ -10,6 +10,7 @@ public class InstructionCourse extends BaseCourseWrapper{
         private static void testInstructions(){
         System.out.println("testing instructions");
         Instruction.calculateResults();
+        Instruction.testLoops();
         System.out.println();
     }
 }

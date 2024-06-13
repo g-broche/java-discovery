@@ -1,5 +1,7 @@
 package Courses;
 
+import java.util.Arrays;
+
 public class Instruction {
     public static void calculateResults(){
         int numberToDivide = 5;
@@ -16,4 +18,26 @@ public class Instruction {
 
     // Unless one of the term is declared or casted as a float/double, the result of the operation is an integer (like in an euclidean division)
     // that will then be assigned to the variable. 
+
+    public static void testLoops(){
+        int[] ForbiddenValues = new int[2];
+        ForbiddenValues[0] = 3;
+        ForbiddenValues[1] = 5;
+        int breakCondition = 7;
+        String toPrint = "Allowed values in loop: ";
+        boolean isFirstAddition = true;
+
+        for(int i=0; i<10; i++){
+            final int CurrentIteration  = i;
+            if(breakCondition == CurrentIteration){
+                break;
+            }
+            if(Arrays.stream(ForbiddenValues).anyMatch(value -> value == CurrentIteration)){
+                continue;
+            }
+            toPrint += isFirstAddition ? Integer.toString(CurrentIteration) : ", "+Integer.toString(CurrentIteration);
+            isFirstAddition = false;
+        }
+        System.out.println(toPrint);
+    }
 }
