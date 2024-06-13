@@ -14,11 +14,9 @@ public class ContainerCourse extends BaseCourseWrapper{
     }
 
     private static void testArrays(){
-        System.out.println("testing arrays");
         ArrayDemo arrayDemo = new ArrayDemo();
         arrayDemo.fillArray();
         arrayDemo.printArray();
-        System.out.println();
     }
 
     private static void testLists(){

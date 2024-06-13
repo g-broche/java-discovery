@@ -1,4 +1,5 @@
 import Chapters.ContainerCourse;
+import Chapters.ErrorHandlingCourse;
 import Chapters.InstructionCourse;
 
 public class App {
@@ -16,6 +17,7 @@ public class App {
     private static void runCourses(){
         InstructionCourse.runCourse();
         ContainerCourse.runCourse();
+        ErrorHandlingCourse.runCourse();
     }
 
     private static void salute(String[] args){
