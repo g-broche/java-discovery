@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import Courses.FileDemo;
 import Courses.InputDemo;
 
 public class InputCourse extends BaseCourseWrapper{
@@ -28,7 +29,8 @@ public class InputCourse extends BaseCourseWrapper{
         }
         
         List<String> responseContent =  InputCourse.getContentFromProvidedUrl(validatedUrl);
-        InputCourse.printContent(responseContent);
+        // InputCourse.printContent(responseContent);
+        FileDemo.writeToFile(responseContent, "output.txt");
         readInput.close();
     }
 
@@ -76,6 +78,10 @@ public class InputCourse extends BaseCourseWrapper{
         return null;
     }
 
+    /**
+     * Print content into the command line interface
+     * @param contentToPrint List<String> representing the lines of content to print
+     */
     private static void printContent(List<String> contentToPrint){
         if (contentToPrint == null) {
             System.out.println("there is no content to print");
