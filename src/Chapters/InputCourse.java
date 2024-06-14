@@ -2,6 +2,8 @@ package Chapters;
 
 import java.io.IOException;
 import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import Courses.InputDemo;
@@ -24,9 +26,9 @@ public class InputCourse extends BaseCourseWrapper{
             System.out.println("The url request step process has been skipped");
             return;
         }
-
-        InputCourse.getContentFromProvidedUrl(validatedUrl);
         
+        List<String> responseContent =  InputCourse.getContentFromProvidedUrl(validatedUrl);
+        InputCourse.printContent(responseContent);
         readInput.close();
     }
 
@@ -60,14 +62,26 @@ public class InputCourse extends BaseCourseWrapper{
      * Open a connection to the requested url and attempts to get content from it
      * @param url url formated String of the content's endpoint
      */
-    private static void getContentFromProvidedUrl(String url){
+    private static List<String> getContentFromProvidedUrl(String url){
+        List<String>content=new ArrayList<String>();
         try {
             URLConnection connection = InputDemo.connectFromURL(url);
-            InputDemo.getContentFromApi(connection);
+            content = InputDemo.getContentFromApi(connection);
+            return content;
         } catch (IOException e) {
             System.err.println("Can't establish connection - "+e.getMessage());
         } catch (Exception e) {
             System.err.println("An error occured during the process of retrieving data from the network - "+e.getMessage());
         }
+        return null;
+    }
+
+    private static void printContent(List<String> contentToPrint){
+        if (contentToPrint == null) {
+            System.out.println("there is no content to print");
+            return;
+        }
+        System.out.println("content :");
+        System.out.println(contentToPrint);
     }
 }
