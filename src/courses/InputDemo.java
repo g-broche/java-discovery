@@ -1,6 +1,9 @@
 package Courses;
 
+import java.io.IOException;
 import java.net.URI;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.Scanner;
 
 public class InputDemo {
@@ -34,5 +37,16 @@ public class InputDemo {
         } catch (Exception e) {
             return false;
         }
+    }
+
+    public static URLConnection connectFromURL(String url) throws IOException{
+        URL mySite = URI.create(url).toURL();
+		URLConnection myURLConnection = mySite.openConnection(); 
+		myURLConnection.connect();
+		return myURLConnection;
+    }
+
+    public static void getContentFromApi(URLConnection connectedConnection){
+        System.out.println("Retrieved a resource of type: " + connectedConnection.getContentType() + " from " + connectedConnection.getURL());	
     }
 }
