@@ -2,6 +2,7 @@ import Chapters.ContainerCourse;
 import Chapters.ErrorHandlingCourse;
 import Chapters.InputCourse;
 import Chapters.InstructionCourse;
+import Chapters.RecursionCourse;
 
 public class App {
     /**
@@ -20,6 +21,7 @@ public class App {
         ContainerCourse.runCourse();
         ErrorHandlingCourse.runCourse();
         InputCourse.runCourse();
+        RecursionCourse.runCourse();
     }
 
     private static void salute(String[] args){
